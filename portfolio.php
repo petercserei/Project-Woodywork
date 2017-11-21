@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>portfolio_page</title>
         <link rel="stylesheet" href="stylesheet.css" type="text/css">
         <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     </head>
