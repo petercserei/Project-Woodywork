@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html> LALALA
+<html>
     <head>
         <meta charset="UTF-8">
         <title></title>
