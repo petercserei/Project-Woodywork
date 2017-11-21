@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html> NETBEANS COMMIT
+<html>
     <head>
         <meta charset="UTF-8">
         <title></title>
