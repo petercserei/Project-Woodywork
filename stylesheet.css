@@ -69,7 +69,7 @@ nav ul a:hover {
 .h1 {
     grid-area: h1;
     background: url(img/image001.jpg) center;
-    background-size: 120%;
+    background-size: 140%;
     padding: 150px;
 }
 .h2 {
