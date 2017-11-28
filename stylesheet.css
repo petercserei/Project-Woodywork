@@ -5,16 +5,43 @@
 }
 
 html {
-/*    background: url(img/wood-background-29.jpeg) center fixed;*/
 }
 
 h1 {
     font-family: 'Arial';
+    font-size: 40px;
+    padding-bottom: 20px;
 }
 
 h2 {
     font-size: 40px;
 }
+
+.login_nav {
+    display: flex;
+    list-style: none;
+    background-color: #374048;
+    padding: 7px;
+    justify-content: center;
+}
+.center_nav {
+    display: flex;
+    width: 990px;
+    justify-content: flex-end;
+}
+.login_nav li {
+    padding-right: 20px;
+}
+.login_nav a {
+    text-decoration: none;
+}
+
+.login_nav p {
+    color: #e2e6e9;
+    font-family: 'Arial';
+    font-size: 14px;
+}
+
 
 nav {
     background: #708090;
@@ -46,6 +73,7 @@ nav a {
 }
 nav i {
     flex: 1;
+    padding-right: 5px;
 }
 nav p {
     padding-top: 6px;
@@ -66,68 +94,77 @@ nav ul a:hover {
 .container {
         
 }
-
-.h1 a, .h2 a, .h3 a, .h4 a {
+.grid_home a {
     text-decoration: none;
     color: black;
     font-family: 'Arial';
     font-size: 14px;
+    display: flex;
+    flex-direction: row;
 }
+.h2 a, .h4 a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Arial';
+    font-size: 14px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
 .h1 {
     grid-area: h1;
-    display: flex;
-    flex-direction: column;
-    background-color: gray;
+    opacity: 0.7;
 }
+.h1:hover {
+    background-color: #e5e3de;
+    opacity: 1;
+}
+.h2 {
+    grid-area: h2;
+    opacity: 0.7;
+}
+.h2:hover {
+    background-color: #e5e3de;
+    opacity: 1;
+}
+.h3 {
+    grid-area: h3;
+    opacity: 0.7;
+}
+.h3:hover {
+    background-color: #e5e3de;
+    opacity: 1;
+}
+.h4 {
+    grid-area: h4;
+    opacity: 0.7;
+}
+.h4:hover {
+    background-color: #e5e3de;
+    opacity: 1;
+}
+
 .bedrijf_text {
-    flex: 1;
+    flex: 1;    
     padding: 50px;
+    min-height: 409px;
+}
+.bedrijf_img {
+    flex: 1;    
+    background: url(img/image001.jpg) center;
+}
+.product_text {
+    flex: 1;    
+    padding: 50px;
+    min-height: 409px;
+}
+.product_img {
+    flex: 1;    
+    background: url(img/all_things_wood.jpg) center;
 }
 p {
     text-decoration: none;
     list-style: none;
-}
-.bedrijf_img {
-    background: url(img/image001.jpg) center;
-    background-size: 100%;
-    height: 200px;
-    flex: 1;
-}
-.h1:hover {
-    opacity: 0.9;
-}
-.h2 {
-    grid-area: h2;
-    background-color: greenyellow;
-    flex-direction: row;
-}
-.product_text {
-    flex: 1;
-    padding: 50px;
-    text-decoration: none;
-}
-.product_img {
-    background: url(img/all_things_wood.jpg) center;
-    background-size: 100%;
-    height: 200px;
-    flex: 1;
-}
-.h2:hover {
-    opacity: 0.9;
-}
-.h3 {
-    grid-area: h3;
-    background-color: greenyellow;
-}
-.h3:hover {
-    opacity: 0.9;
-}
-.h4 {
-    grid-area: h4;
-    background-color: gray;
-}
-.h4:hover {
-    opacity: 0.9;
 }
 
 
@@ -182,12 +219,21 @@ p {
 @media screen and (min-width: 1000px) {
     .picture_header {
         background: url(img/15578438_258663144551980_443141190466654411_n.jpg) center; 
-        height: 250px;
+        height: 300px;
     }   
     
     nav ul {
         display: flex;
         width: 990px;
+    }
+    
+    .grid_home {
+        display: grid;
+        grid-template-columns: 1fr 495px 495px 1fr;
+        grid-template-row: 1fr 1fr; 
+        grid-template-areas:
+        ". h1 h2 ."
+        ". h3 h4 ."
     }
 
     .grid_portfolio {
@@ -208,14 +254,5 @@ p {
     .p5 {
         grid-area: p5;
         background-color: #530030;
-    }
-
-    .grid_home {
-        display: grid;
-        grid-template-columns: 1fr 495px 495px 1fr;
-        grid-template-row: 1fr 1fr; 
-        grid-template-areas:
-        ". h1 h2 ."
-        ". h3 h4 ."
     }
 }
