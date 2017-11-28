@@ -1,3 +1,18 @@
+<?php
+$pdo = new PDO("mysql:host=localhost;dbname=woodywork;port=3306", "root", ""); // conect database
+
+
+$countsql = $pdo->prepare("SELECT COUNT(productenID) as c FROM producten"); //count amount of items in portofolio
+$countsql->execute();
+$countrow = $countsql->fetch();
+$count = $countrow["c"]; 
+
+
+//inhoud van portofolio
+$stmt = $pdo->prepare("SELECT * FROM producten ORDER BY productenID DESC");
+$stmt->execute();
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -27,13 +42,42 @@
             </ul>
         </nav>
         <div class="container">
-            <div class="grid_portfolio">
-                <div class="p1"><h2>Titel</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p></div>
-                <div class="p2"><h2>Titel</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p></div>
-                <div class="p3"></div>
-                <div class="p4"><h2>Titel</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p></div>
-                <div class="p5"><h2>Titel</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p></div>
-            </div>
+             <?php
+            //maak een variable voor het aantal producten
+            //loop door de producten en schrijf voor elk product div + class h2 en p
+            //voeg voor elke vijf een container div eromheen toe
+            
+            
+            
+            
+            //aantal producten uit de database:
+            
+            
+            for($i = 0; $i<$count;$i++){
+                
+                if($i%3==0){
+                    print('<div class="grid_portfolio">'); //container div voor elke drie divjes
+                }
+                
+                
+
+                //haal hier spul uit de database
+                $row = $stmt->fetch();
+                //print de inhoud van het divje
+                print('<div class="p'.($i%3+1).'"><a href="product.php?id='.$row[0].'">'
+                        . '<h2>'.$row[1].'</h2>'
+                        . '<img src="data:image/jpg;base64,'.base64_encode($row[3] ).'">'
+                        . '</a></div>');
+                
+                
+                if($i%3==2||$i==$count-1){ // sluit container div af na vijf divjes of na de laatste div
+                    print('</div>');
+                }
+                
+            }
+        
+           
+            ?>
         </div>
         <footer>
             <div class="grid_footer">
