@@ -245,4 +245,42 @@ p {
         grid-template-areas:
         ". p1 p2 p3 ."
     }
+    
+    .grid_naamplaat {
+        display: grid;
+        min-height: 300px;
+        grid-template-columns: 1fr 450px 450px 1fr;
+        grid-template-row: 1fr 1fr 1fr ;
+        grid-template-areas:
+        ". p1 p2 ."
+    }
+    .grid_naamplaat .p2{
+        display: grid;
+        min-height: 300px;
+        grid-template-columns: 50% 50% ;
+        grid-template-row: 1fr 1fr ;
+        grid-template-areas:
+        " p11 p12 "
+        " p13 p14 "
+    }
+    .p11, .p13{   
+        
+        
+        
+        text-align: right;
+        padding-right: 0px;
+    }
+    
+    .p11 p, .p13 p{
+        height: 20px;
+    }
+    .p12 input, .p14 input {
+        height: 20px;
+    }
+     
+    .p11 h3{
+        margin-top: 20px;
+    }
+    
+    
 }
