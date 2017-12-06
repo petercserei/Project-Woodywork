@@ -81,83 +81,88 @@
     ?>   
     
     <div  class="grid_naamplaat">
-        <div class="p2">
-            <div class="p11">
-                <p>Hout:</p>
-                <p>Kleur:</p>
-                <p>Naam: </p>
-                <h3>Afmeting:</h3>
-            </div>
-            
-            <div class="p12">
-                
-                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                    <input list="browsers" name="Hout">
-                              <datalist id="browsers">
-                                <option value="Hout 1">
-                                <option value="Hout 2">
-                                <option value="Hout 3">
-                                <option value="Hout 4">
-                                <option value="Hout 5">
-                              </datalist><br>
-                 <span class="error"> <?php echo $teksterr;?></span>   
-                <input type="text" name="tekst" value="<?php echo $tekst;?>"><br>
-                 <?php echo $tekst;?>
-                 <span class="error"> <?php echo $hoogteerr;?></span>
-
-                 <input type="hoogte" name="hoogte" value="<?php echo $hoogte;?>"><br>
-
-            </div>
-            <div class="p13">
-                <p>hoogte:</p>
-                <p>breedte:</p>
-                <p>lengte:</p>
-
-            </div>
-            <div class="p14">
-
-                 
-
-                 <input list="browsers" name="tkleur">
-                              <datalist id="browsers">
-                                <option value="Rood">
-                                <option value="Groen">
-                                <option value="Blauw">
-                                <option value="Geel">
-                                <option value="Zwart">
-                              </datalist><br>
-
-                 <span class="error"> <?php echo $pkleurerr;?></span>
-                 <input list="browsers" name="pkleur">
-                              <datalist id="browsers">
-                                <option value="Rood">
-                                <option value="Groen">
-                                <option value="Blauw">
-                                <option value="Geel">
-                                <option value="Zwart">
-                              </datalist><br>
-
-
-
-
-                  <input type="submit" name="submit" value="Submit">
-                </form>
-            </div>
+        <div class="n2">
+                    <?php
+              echo "<h2>Your Input:</h2>";
+              echo $tekst;
+              echo "<br>";
+              echo $afmeting;
+              echo "<br>";
+              echo $materiaal;
+              echo "<br>";
+              echo $tkleur;
+              echo "<br>";
+              echo $pkleur;
+              ?>
         </div>
-    <div class="p1">
-      <?php
-echo "<h2>Your Input:</h2>";
-echo $tekst;
-echo "<br>";
-echo $afmeting;
-echo "<br>";
-echo $materiaal;
-echo "<br>";
-echo $tkleur;
-echo "<br>";
-echo $pkleur;
-?>
-        </p></div></div></div>
+        <div class="n3">
+            
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                <table style="width:100%">
+                   
+                   <tr>
+                     <td>Tekst:</td>
+                     <td><input type="text" name="tekst" value="<?php echo $tekst;?>"></td>
+                   </tr>
+                   <tr>
+                     <td>Hout:</td>
+                     <td><input list="hout" name="hout" value="<?php echo $tekst;?>"></td>
+                   </tr>
+                   <tr>
+                     <td>Lettertype:</td>
+                     <td><input type="text" name="tekst" value="<?php echo $tekst;?>"></td>
+                   </tr>
+                   <tr>
+                     <td>Tekstkleur:</td>
+                     <td><input list="kleur" name="tkleur" value="<?php echo $tekst;?>"></td>
+                   </tr>
+                   <tr>
+                     <td>Achtergrondkleur:</td>
+                     <td><input list="kleur" name="pkleur" value="<?php echo $tekst;?>"></td>
+                   </tr>
+                   <tr>
+                       <th>Afmetingen:</th>
+                       <th></th>
+                   </tr>
+                   <tr>
+                     <td>Hoogte:</td>
+                     <td><input class="nummer" type="number" name="hoogte" value="<?php echo $tekst;?>">cm</td>
+                   </tr>
+                   <tr>
+                     <td>Breedte:</td>
+                     <td><input class="nummer" type="number" name="breedte" value="<?php echo $tekst;?>">cm</td>
+                   </tr>
+                   <tr>
+                     <td>Lengte:</td>
+                     <td><input class="nummer" type="number" name="lengte" value="<?php echo $tekst;?>">cm</td>
+                   </tr>
+                   <tr>
+                     <td></td>
+                     <td><input type="submit" name="submit" value="cool"></td>
+                   </tr>
+               </table> 
+            </form>
+            <datalist id="hout">
+                <option value="Hout 1">
+                <option value="Hout 2">
+                <option value="Hout 3">
+                <option value="Hout 4">
+                <option value="Hout 5">
+            </datalist>
+            <datalist id="kleur">
+                <option value="Rood">
+                <option value="Groen">
+                <option value="Blauw">
+                <option value="Geel">
+                <option value="Zwart">
+            </datalist>
+            
+            
+            
+            
+            </div>
+        
+    </div></div>
         <footer>
             <div class="grid_footer">
                 <div class="f1">
