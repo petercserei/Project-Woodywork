@@ -51,7 +51,7 @@ $nieuws->execute();
                 </div>
                 
                 <div class="h2">
-                    <!--<a href="archief.php">-->
+                    <a href="archief.php">
                         <div>
                             <?php
                             $row = $nieuws->fetch();
@@ -62,7 +62,7 @@ $nieuws->execute();
                                     );
                             ?>
                         </div>
-                        <div>
+                        <div >
                             <?php
                             $row = $nieuws->fetch();
                             print(

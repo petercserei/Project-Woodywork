@@ -1,3 +1,29 @@
+<?php
+$pdo = new PDO("mysql:host=localhost;dbname=woodywork;port=3306", "root", ""); // conect database
+
+
+
+if(isset($_GET["id"])){
+       
+    $naamplaat = $pdo->prepare("SELECT * FROM naamplaat WHERE id=".$_GET["id"]);
+    $naamplaat->execute();
+
+}
+if(isset($_POST["verzenden"])){
+    $verzenden = $pdo->prepare("INSERT INTO");// insert nieuwe naamplaat
+    $verzenden->execute();
+    
+    $idhalen = $pdo->prepare("SELECT MAX(naamplaat_id) M FROM naamplaat"); // haal de niewste id op
+    $idhalen->execute();
+    $row = $idhalen->fetch();
+    $id = $row["M"];
+    
+    
+    
+    mail( "jelte@mail.nl" , "naamplaat van " , ("naamplaat.php?id=".$id));
+}
+
+?>
 <!DOCTYPE html>
 <html> 
     <head>
