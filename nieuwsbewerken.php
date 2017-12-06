@@ -12,6 +12,11 @@ if(TRUE){//check if admin
             $nieuws->execute(array($_POST["titel"],$_POST["tekst"],$_POST["datum"]));
             header( "Location: archief.php" );
         }
+        if(isset($_POST["delete"])){
+            $nieuws = $pdo->prepare('DELETE FROM nieuws WHERE nieuwsID=?');
+            $nieuws->execute(array($_GET["id"]));
+            header( "Location: archief.php" );
+        }
 }
 
 ?>
@@ -52,9 +57,9 @@ if(TRUE){//check if admin
                     if($_GET["id"]=="nieuw"){ //check nieuw of bewerken
                         print(
                               '<form action="nieuwsbewerken.php?id='.$_GET["id"].'" method="post">'
-                            . '<label>titel:</label><input type="text" name="titel"><br>'
-                            . '<label>tekst:</label><textarea name="tekst">Enter text here...</textarea><br>'
-                            . '<label>datum:</label><input type="text" name="datum" value="'.date('d').'-'.date('m').'-'.date('y').'"><br>'  
+                            . '<label for="titel">titel:</label><input type="text"  id="titel" name="titel"><br>'
+                            . '<label for="tekst">tekst:</label><textarea name="tekst"  id="tekst">Enter text here...</textarea><br>'
+                            . '<label for="datum">datum:</label><input type="text" name="datum"  id="datum" value="'.date('d').'-'.date('m').'-'.date('y').'"><br>'  
                             . '<label></label><input type="submit" name="insert" value="opslaan">'  
                             . '</form>');
                         } else {
@@ -64,10 +69,11 @@ if(TRUE){//check if admin
 
                             print(
                               '<form action="nieuwsbewerken.php?id='.$_GET["id"].'" method="post">'
-                            . '<input type="text" name="titel" value="'.$row[1].'">'
-                            . '<textarea name="tekst">'.$row[2].'</textarea>'
-                            . '<input type="text" name="datum" value="'.$row[3].'">'  
-                            . '<input type="submit" name="update" value="opslaan">'  
+                            . '<label for="titel">titel:</label><input type="text"  id="titel" name="titel" value="'.$row[1].'"><br>'
+                            . '<label for="tekst">tekst:</label><textarea name="tekst"  id="tekst">'.$row[2].'</textarea><br>'
+                            . '<label for="datum">datum:</label><input type="text" name="datum"  id="datum"  value="'.$row[3].'"><br>'  
+                            . '<label></label><input type="submit" name="update" value="opslaan">'  
+                            . '<input type="submit" name="delete" value="verwijderen"  onclick="return confirm(\'Weet je zeker dat je dit item wilt verwijderen?\');">' 
                             . '</form>');
                         }
                     } else {
