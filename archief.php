@@ -42,7 +42,18 @@ $nieuws->execute();
         </nav>
         <div class="container">
             <?php
-            for($i = 0; $i<$count;$i++){
+            $x=0;
+            if(TRUE){ // check if admin
+                print('<div class="archief">'
+                    . '<div class="n0">'
+                    .  '<a href="nieuwsbewerken.php?id=nieuw">'  
+                    . 'nieuw'  
+                    . '</a>'
+                    . '</div>');
+                $count++;
+                $x=1;
+            }
+            for($i = $x; $i<$count;$i++){
                 
                 if($i%2==0){
                     print('<div class="archief">'); //container div voor elke drie divjes
@@ -57,11 +68,17 @@ $nieuws->execute();
                             '<div class="n'.($i%2).'">'
                                 . '<h3>'.$row[1].'</h3>'
                                 . '<p>'.$row[2].'</p>'
-                                . '<p>'.$row[3].'</p>'
-                            . '</div>'
-                        );
-                        
-                if($i%2==1||$i==$count-1){ // sluit container div af na vijf divjes of na de laatste div
+                                . '<p>'.$row[3].'</p>');
+                if(TRUE){//check if admin
+                    print(
+                             '<a href="nieuwsbewerken.php?id='.$row[0].'">'  
+                            . 'bewerken'  
+                            . '</a>');
+                }
+                
+                print('</div>');
+                if($i%2==1||$i==$count-1){ // sluit container div af na twee divjes of na de laatste div
+                    
                     print('</div>');
                 }
                 
@@ -72,7 +89,7 @@ $nieuws->execute();
         <footer>
             <div class="grid_footer">
                 <div class="f1">
-<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p></div>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p></div>
             </div>
         </footer>
     </body>
