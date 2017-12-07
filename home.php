@@ -1,7 +1,7 @@
 <?php
-<<<<<<< HEAD
+
 SESSION_START();
-=======
+
 $pdo = new PDO("mysql:host=localhost;dbname=woodywork;port=3306", "root", ""); // conect database
 
 
@@ -16,7 +16,7 @@ $port->execute();
 $nieuws = $pdo->prepare("SELECT * FROM nieuws ORDER BY nieuwsID DESC LIMIT 2");
 $nieuws->execute();
 
->>>>>>> 0cce61a23dfdd23c124fb000d932474d68f711b6
+
 ?>
 
 <!DOCTYPE html>

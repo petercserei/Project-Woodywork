@@ -4,16 +4,18 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Applications/XAMPP/htdocs/aTest/includes/inloggen-inc.php</file>
-            <file>file:/Applications/XAMPP/htdocs/aTest/stylesheet.css</file>
             <file>file:/Applications/XAMPP/htdocs/aTest/inloggen.php</file>
-            <file>file:/Applications/XAMPP/htdocs/aTest/scripts/registreren-inc.js</file>
             <file>file:/Applications/XAMPP/htdocs/aTest/includes/registreren-inc.php</file>
-            <file>file:/Applications/XAMPP/htdocs/aTest/home.php</file>
             <file>file:/Applications/XAMPP/htdocs/aTest/besteld.php</file>
             <file>file:/Applications/XAMPP/htdocs/aTest/includes/uitloggen-inc.php</file>
+            <file>file:/Applications/XAMPP/htdocs/aTest/portfolio.php</file>
+            <file>file:/Applications/XAMPP/htdocs/aTest/registreren.php</file>
+            <file>file:/Applications/XAMPP/htdocs/aTest/includes/includes-html.html</file>
+            <file>file:/Applications/XAMPP/htdocs/aTest/stylesheet.css</file>
+            <file>file:/Applications/XAMPP/htdocs/aTest/scripts/registreren-inc.js</file>
+            <file>file:/Applications/XAMPP/htdocs/aTest/home.php</file>
             <file>file:/Applications/XAMPP/htdocs/aTest/includes/database-inlogsysteem-inc.php</file>
             <file>file:/Applications/XAMPP/htdocs/aTest/scripts/uitloggen-inc.js</file>
-            <file>file:/Applications/XAMPP/htdocs/aTest/registreren.php</file>
         </group>
     </open-files>
 </project-private>
