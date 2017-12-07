@@ -31,7 +31,7 @@ img{
     display: flex;
     list-style: none;
     background-color: #374048;
-    padding: 7px;
+    padding: 4px;
     justify-content: center;
 }
 .center_nav {
@@ -39,19 +39,53 @@ img{
     width: 990px;
     justify-content: flex-end;
 }
-.login_nav li {
+.center_nav li {
     padding-right: 20px;
+    list-style: none;
 }
-.login_nav a {
+.center_nav a {
     text-decoration: none;
 }
-
-.login_nav p {
+.center_nav p {
     color: #e2e6e9;
     font-family: 'Arial';
     font-size: 14px;
 }
+.center_nav p:hover {
+    color: #d4d9de;
+}
+.center_nav ul li ul li {
+    display: none;
+}
+.center_nav ul li:hover ul li {
+    display: flex;
+}
 
+.uitloggen-form {
+    margin-right: 20px;
+    text-align: right;
+}
+
+.uitloggen-form:hover .button_hide {
+    display: block;
+}
+
+.button_hide {
+    display: none;
+}
+#button_p {
+    font-size: 14px;
+    font-family: 'Arial';
+    color: #e2e6e9;
+    background-color: #374048;
+    border: none;
+    cursor: pointer;
+    float: right;
+    text-align: right;
+}
+#button_p:hover {
+    color: #d4d9de;
+}
 
 nav {
     background: #708090;
@@ -100,6 +134,7 @@ nav ul a:hover {
 .current_page:hover {
     background-color: #77642b;
 }
+
 
 .container {
         
@@ -214,6 +249,60 @@ p {
     font-family: 'Arial';
     font-size: 12px;
     text-align: center;
+}
+
+.grid_inloggen {
+    display: grid;
+    grid-template-columns: 1fr 990px 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    grid-template-areas:
+    ". i1 ."
+    ". i2 ."    
+}
+
+.inloggen-form {
+    grid-area: i1;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 200px 50px 200px;
+}
+
+.iregistreren-form {
+    grid-area: i2;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 200px 0px 200px;
+}
+
+.inlog-item {
+    height: 50px;
+    font-size: 18px;
+    padding: 10px;
+    margin:10px;
+}
+
+.grid_registreren {
+    display: grid;
+    grid-template-columns: 1fr 990px 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    grid-template-areas:
+    ". i1 ."
+}
+
+.registreren-form {
+    grid-area: i1;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 200px 50px 200px;
+}
+
+.reg-item {
+    height: 50px;
+    font-size: 18px;
+    padding: 10px;
+    margin:10px;
 }
 
 

@@ -2,12 +2,18 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group name="Oefententamen 1">
-            <file>file:/C:/xampp/htdocs/aTest/bedrijf.php</file>
-            <file>file:/C:/xampp/htdocs/aTest/contact.php</file>
-            <file>file:/C:/xampp/htdocs/aTest/stylesheet.css</file>
-            <file>file:/C:/xampp/htdocs/aTest/home.php</file>
-            <file>file:/C:/xampp/htdocs/aTest/portfolio.php</file>
+        <group>
+            <file>file:/Applications/XAMPP/htdocs/aTest/includes/inloggen-inc.php</file>
+            <file>file:/Applications/XAMPP/htdocs/aTest/stylesheet.css</file>
+            <file>file:/Applications/XAMPP/htdocs/aTest/inloggen.php</file>
+            <file>file:/Applications/XAMPP/htdocs/aTest/scripts/registreren-inc.js</file>
+            <file>file:/Applications/XAMPP/htdocs/aTest/includes/registreren-inc.php</file>
+            <file>file:/Applications/XAMPP/htdocs/aTest/home.php</file>
+            <file>file:/Applications/XAMPP/htdocs/aTest/besteld.php</file>
+            <file>file:/Applications/XAMPP/htdocs/aTest/includes/uitloggen-inc.php</file>
+            <file>file:/Applications/XAMPP/htdocs/aTest/includes/database-inlogsysteem-inc.php</file>
+            <file>file:/Applications/XAMPP/htdocs/aTest/scripts/uitloggen-inc.js</file>
+            <file>file:/Applications/XAMPP/htdocs/aTest/registreren.php</file>
         </group>
     </open-files>
 </project-private>
