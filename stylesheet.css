@@ -100,6 +100,14 @@ a{
     text-decoration: none;
 }
 
+td:first-child, th:first-child{
+    text-align: right;
+}
+
+.nummer{
+    width: 100px;
+}
+
 img{
     width: 100%;
     height: auto;
@@ -109,7 +117,7 @@ img{
     display: flex;
     list-style: none;
     background-color: #374048;
-    padding: 7px;
+    padding: 4px;
     justify-content: center;
 }
 .center_nav {
@@ -117,19 +125,53 @@ img{
     width: 990px;
     justify-content: flex-end;
 }
-.login_nav li {
+.center_nav li {
     padding-right: 20px;
+    list-style: none;
 }
-.login_nav a {
+.center_nav a {
     text-decoration: none;
 }
-
-.login_nav p {
+.center_nav p {
     color: #e2e6e9;
     font-family: 'Arial';
     font-size: 14px;
 }
+.center_nav p:hover {
+    color: #d4d9de;
+}
+.center_nav ul li ul li {
+    display: none;
+}
+.center_nav ul li:hover ul li {
+    display: flex;
+}
 
+.uitloggen-form {
+    margin-right: 20px;
+    text-align: right;
+}
+
+.uitloggen-form:hover .button_hide {
+    display: block;
+}
+
+.button_hide {
+    display: none;
+}
+#button_p {
+    font-size: 14px;
+    font-family: 'Arial';
+    color: #e2e6e9;
+    background-color: #374048;
+    border: none;
+    cursor: pointer;
+    float: right;
+    text-align: right;
+}
+#button_p:hover {
+    color: #d4d9de;
+}
 
 nav {
     background: #708090;
@@ -179,6 +221,7 @@ nav ul a:hover {
     background-color: #77642b;
 }
 
+
 .container {
     background: #8396A8;
 }
@@ -210,11 +253,30 @@ nav ul a:hover {
 .h2 {
     grid-area: h2;
     opacity: 0.7;
+    background: linear-gradient(to right, lightsteelblue 40%, white 40% );
 }
+.h2 div{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 450px;
+}
+.h2 div:first-child{
+    margin-top: 50px;
+}
+
+.h2 div p:last-child{
+    text-align: right;
+}
+
 .h2:hover {
-    background-color: #e5e3de;
+    background: linear-gradient(to right, lightsteelblue 40%, #e5e3de 40% );
     opacity: 1;
 }
+
+
+
 .h3 {
     grid-area: h3;
     opacity: 0.7;
@@ -247,9 +309,55 @@ nav ul a:hover {
     min-height: 409px;
 }
 .product_img {
+
     flex: 1;
     background: url(img/all_things_wood.jpg) center;
+
+    flex: 1;
+
 }
+.product_img img{
+    height:100%;
+    object-fit: cover;
+}
+
+
+.n0{
+    grid-area: n0;
+}
+
+.n1{
+    grid-area: n1;
+}
+
+.n2{
+    grid-area: n2;
+}
+
+.n3{
+    grid-area: n3;
+}
+.nb0{
+    grid-area: nb0;
+    padding: 50px;
+}
+.nb0 label{
+    width: 40%;
+    display: inline-block;
+    text-align: right;
+}
+.nb0 input{
+    margin-right: auto;
+}
+.archief div{
+    padding: 50px;
+    padding-bottom: 0px;
+}
+.archief div p:last-of-type{
+    text-align: right;
+    color: lightsteelblue;
+}
+
 p {
     text-decoration: none;
     list-style: none;
@@ -265,17 +373,21 @@ p {
     font-family: 'Arial';
     font-size: 12px;
 }
+.p1:hover, .p2:hover, .p3:hover{
+    background-color: lightslategrey;
+}
+
 .p1 {
     grid-area: p1;
-    background-color: #fe7f4a;
+    background-color: lightsteelblue;
 }
 .p2 {
     grid-area: p2;
-    background-color: #ff583d;
+    background-color: rgb(156, 196, 222);
 }
 .p3 {
     grid-area: p3;
-    background-color: blueviolet;
+    background-color: lightsteelblue;
 }
 
 .grid_footer {
@@ -292,6 +404,60 @@ p {
     font-family: 'Arial';
     font-size: 12px;
     text-align: center;
+}
+
+.grid_inloggen {
+    display: grid;
+    grid-template-columns: 1fr 990px 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    grid-template-areas:
+        ". i1 ."
+        ". i2 ."
+}
+
+.inloggen-form {
+    grid-area: i1;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 200px 50px 200px;
+}
+
+.iregistreren-form {
+    grid-area: i2;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 200px 0px 200px;
+}
+
+.inlog-item {
+    height: 50px;
+    font-size: 18px;
+    padding: 10px;
+    margin:10px;
+}
+
+.grid_registreren {
+    display: grid;
+    grid-template-columns: 1fr 990px 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    grid-template-areas:
+        ". i1 ."
+}
+
+.registreren-form {
+    grid-area: i1;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 200px 50px 200px;
+}
+
+.reg-item {
+    height: 50px;
+    font-size: 18px;
+    padding: 10px;
+    margin:10px;
 }
 
 
@@ -323,6 +489,7 @@ p {
         grid-template-areas:
             ". p1 p2 p3 ."
     }
+
     .grid_bedrijf {
         display: grid;
         grid-template-columns:30% 70%;
@@ -345,3 +512,29 @@ p {
 
     }
 }
+
+
+.grid_naamplaat {
+    display: grid;
+    min-height: 300px;
+    grid-template-columns: 1fr 450px 450px 1fr;
+    grid-template-row: 1fr 1fr 1fr ;
+    grid-template-areas:
+        ". n2 n3 ."
+}
+.archief {
+    display: grid;
+    grid-template-columns: 1fr 450px 450px 1fr;
+    grid-template-row: 1fr 1fr 1fr ;
+    grid-template-areas:
+        ". n0 n1 ."
+}
+.nieuwsbewerkengrid{
+    display: grid;
+    grid-template-columns: 1fr 900px 1fr;
+    grid-template-row: 1fr 1fr 1fr ;
+    grid-template-areas:
+        ". nb0 ."
+}
+}
+

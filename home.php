@@ -1,17 +1,59 @@
+<?php
+
+SESSION_START();
+
+$pdo = new PDO("mysql:host=localhost;dbname=woodywork;port=3306", "root", ""); // conect database
+
+
+
+
+
+//inhoud van portofolio
+$port = $pdo->prepare("SELECT * FROM producten ORDER BY productenID DESC LIMIT 2");
+$port->execute();
+
+//inhoud van nieuws
+$nieuws = $pdo->prepare("SELECT * FROM nieuws ORDER BY nieuwsID DESC LIMIT 2");
+$nieuws->execute();
+
+
+?>
+
 <!DOCTYPE html>
 <html> 
     <head>
         <meta charset="UTF-8">
-        <title>home_page</title>
+        <title>home_pagina</title>
         <link rel="stylesheet" href="stylesheet.css" type="text/css">
         <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     </head>
     <body>
         <div class="login_nav">
             <div class="center_nav">
-            <li><a href="inloggen.php"><p>inloggen</p></a></li>
-            <li><p>|</p></li>
-            <li><a href="winkelwagen.php"><p>winkelwagen (0)</p></a></li>
+                <?php
+                    if(isset($_SESSION['acc_id'])) {
+                    print '<div class="login_nav">
+                            <div class="center_nav">
+                                <form class=uitloggen-form action="includes/uitloggen-inc.php" method="POST">' ?>
+                                    <?php print "<a href=" . "#" . "><p>" . $_SESSION['acc_gebruikersnaam'] . "</p></a>"?>
+                                    <?php print '<a href="besteld.php" class="button_hide"><p>mijn bestellingen</p></a>'?>
+                                    <?php print '<button onclick="fUitloggen()" class="button_hide" id="button_p" type="submit" name="uitloggen">uitloggen</button>
+                                </form>
+                            <li><p>|</p></li>
+                            <li><a href="winkelwagen.php"><p>winkelwagen (0)</p></a></li>
+                            </div>
+                        </div>';
+                        
+                    } else {
+                        print '<div class="login_nav">
+                            <div class="center_nav">
+                                <li><a href="inloggen.php"><p>inloggen</p></a></li>
+                                <li><p>|</p></li>
+                                <li><a href="winkelwagen.php"><p>winkelwagen (0)</p></a></li>
+                            </div>
+                        </div>';
+                    }
+                ?>
             </div>
         </div>
         <div class="picture_header">
@@ -32,18 +74,59 @@
                     <div class="bedrijf_text"><h1>Hoi!</h1><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p><br><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p></div>
                     <div class="bedrijf_img"></div></a>
                 </div>
-                <div class="h2"><a href="portfolio.php">
-                    <div class="product_text"><h1>Product 1</h1><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p><br><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p></div>
-                    <div class="product_img"></div></a>
-                </div>
-                <div class="h3"><a href="portfolio.php">
-                    <div class="product_text"><h1>Product 2</h1><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis nan mas penatibes, nascetur ridiculus mus.</p></div>
-                    <div class="product_img"></div>
+                
+                <div class="h2">
+                    <a href="archief.php">
+                        <div>
+                            <?php
+                            $row = $nieuws->fetch();
+                            print(
+                                          '<h3>'.$row[1].'</h3>'
+                                        . '<p>'.$row[2].'</p>'
+                                    . '<p>'.$row[3].'</p>'
+                                    );
+                            ?>
+                        </div>
+                        <div>
+                            <?php
+                            $row = $nieuws->fetch();
+                            print(
+                                          '<h3>'.$row[1].'</h3>'
+                                        . '<p>'.$row[2].'</p>'
+                                    . '<p>'.$row[3].'</p>'
+                                    );
+                            ?>
+                        </div>
                     </a>
                 </div>
-                <div class="h4"><a href="portfolio.php">
-                    <div class="product_text"><h1>Product 3</h1><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p><br><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p></div>
-                    <div class="product_img"></div></a>
+                    
+                <div class="h3">
+                    <?php
+                    $row = $port->fetch();
+                    print('<a href="product.php?id='.$row[0].'">'
+                            . '<div class="product_text">'
+                                . '<h2>'.$row[1].'</h2>'
+                                . '<p>'.$row[2].'</p>'
+                            . '</div>'
+                            . '<div class="product_img ">'
+                                . '<img src="data:image/jpg;base64,'.base64_encode($row[3] ).'">'
+                            . '</div>'
+                        . '</a>');
+                    ?>
+                </div>
+                <div class="h4">
+                    <?php
+                    $row = $port->fetch();
+                    print('<a href="product.php?id='.$row[0].'">'
+                            . '<div class="product_text">'
+                                . '<h2>'.$row[1].'</h2>'
+                                . '<p>'.$row[2].'</p>'
+                            . '</div>'
+                            . '<div class="product_img ">'
+                                . '<img src="data:image/jpg;base64,'.base64_encode($row[3] ).'">'
+                            . '</div>'
+                        . '</a>');
+                    ?>
                 </div>
             </div>
         </div>
@@ -53,5 +136,6 @@
 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p></div>
             </div>
         </footer>
+        <script src="scripts/uitloggen-inc.js"></script>
     </body>
 </html>
