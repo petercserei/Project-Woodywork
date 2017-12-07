@@ -87,7 +87,7 @@ $nieuws->execute();
                                     );
                             ?>
                         </div>
-                        <div >
+                        <div>
                             <?php
                             $row = $nieuws->fetch();
                             print(
