@@ -2,6 +2,84 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+}
+h3 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+textarea {
+    resize: none;
+}
+.error {
+    color: red;
+}
+.contacttext {
+    border-top: 30px solid;
+    border-bottom: 80px solid;
+    border-color: #8396A8;
+    padding: 0;
+    border-left: 150px solid;
+    color: #8396A8;
+    font-size: 12px;
+    font-family: 'Arial';
+    background-color: #8396A8;
+    display:grid;
+    grid-template-columns: 35% 30% 30%;
+
+}
+input {
+    width: 180px;
+}
+input, textarea {
+    margin-top: 12px;
+}
+label{
+    text-align: right;
+    padding-right: 12px;
+    margin-top: 12px;
+    float: left;
+    width: 150px;
+    clear: left;
+
+}
+.theSubmit {
+    margin-left: 150px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.adresgegevens {
+    margin-top: 12px;
+    color: #FFF;
+}
+.adresgegevens, li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #FFF;
+
+}
+#adrescontact {
+    list-style-type: none;
+    margin-left: 210px;
+    margin-top: 30px;
+    text-align: left;
+}
+.formulieren {
+    /*text-align: center;*/
+    font-family: 'Arial';
+    font-size: 12px;
+    color: #FFF;
+}
+.boxes {
+    margin-top: 50px;
+}
+
+#map {
+    border: 1px solid black;
+    height: 300px;
+    width: 100%;
 }
 
 html {
@@ -23,8 +101,8 @@ a{
 }
 
 img{
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: auto;
 }
 
 .login_nav {
@@ -102,7 +180,7 @@ nav ul a:hover {
 }
 
 .container {
-        
+    background: #8396A8;
 }
 .grid_home a {
     text-decoration: none;
@@ -155,21 +233,21 @@ nav ul a:hover {
 }
 
 .bedrijf_text {
-    flex: 1;    
+    flex: 1;
     padding: 50px;
     min-height: 409px;
 }
 .bedrijf_img {
-    flex: 1;    
+    flex: 1;
     background: url(img/image001.jpg) center;
 }
 .product_text {
-    flex: 1;    
+    flex: 1;
     padding: 50px;
     min-height: 409px;
 }
 .product_img {
-    flex: 1;    
+    flex: 1;
     background: url(img/all_things_wood.jpg) center;
 }
 p {
@@ -219,22 +297,22 @@ p {
 
 @media screen and (min-width: 1000px) {
     .picture_header {
-        background: url(img/15578438_258663144551980_443141190466654411_n.jpg) center; 
+        background: url(img/15578438_258663144551980_443141190466654411_n.jpg) center;
         height: 300px;
-    }   
-    
+    }
+
     nav ul {
         display: flex;
         width: 990px;
     }
-    
+
     .grid_home {
         display: grid;
         grid-template-columns: 1fr 495px 495px 1fr;
-        grid-template-row: 1fr 1fr; 
+        grid-template-row: 1fr 1fr;
         grid-template-areas:
-        ". h1 h2 ."
-        ". h3 h4 ."
+            ". h1 h2 ."
+            ". h3 h4 ."
     }
 
     .grid_portfolio {
@@ -243,6 +321,27 @@ p {
         grid-template-columns: 1fr 300px 300px 300px 1fr;
         grid-template-row: 1fr 1fr 1fr ;
         grid-template-areas:
-        ". p1 p2 p3 ."
+            ". p1 p2 p3 ."
+    }
+    .grid_bedrijf {
+        display: grid;
+        grid-template-columns:30% 70%;
+        grid-auto-rows: minmax(100px, auto);
+        grid-gap:1em;
+        padding: 5em;
+
+
+    }
+    .b1 {
+
+    }
+    .b2 {
+
+    }
+    .b3 {
+
+    }
+    .b4 {
+
     }
 }
