@@ -22,6 +22,14 @@ a{
     text-decoration: none;
 }
 
+td:first-child, th:first-child{
+    text-align: right;
+}
+
+.nummer{
+    width: 100px;
+}
+
 img{
   width: 100%;
   height: auto;
@@ -167,11 +175,30 @@ nav ul a:hover {
 .h2 {
     grid-area: h2;
     opacity: 0.7;
+    background: linear-gradient(to right, lightsteelblue 40%, white 40% );
 }
+.h2 div{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 450px;
+}
+.h2 div:first-child{
+    margin-top: 50px;
+}
+
+.h2 div p:last-child{
+    text-align: right;
+}
+
 .h2:hover {
-    background-color: #e5e3de;
+    background: linear-gradient(to right, lightsteelblue 40%, #e5e3de 40% );
     opacity: 1;
 }
+
+
+
 .h3 {
     grid-area: h3;
     opacity: 0.7;
@@ -205,8 +232,49 @@ nav ul a:hover {
 }
 .product_img {
     flex: 1;    
-    background: url(img/all_things_wood.jpg) center;
 }
+.product_img img{
+    height:100%;
+    object-fit: cover;
+}
+
+
+.n0{
+    grid-area: n0;
+}
+
+.n1{
+    grid-area: n1;
+}
+
+.n2{
+    grid-area: n2;
+}
+
+.n3{
+    grid-area: n3;
+}
+.nb0{
+    grid-area: nb0;
+    padding: 50px;
+}
+.nb0 label{
+    width: 40%;
+    display: inline-block;
+    text-align: right;
+}
+.nb0 input{
+    margin-right: auto;
+}
+.archief div{
+    padding: 50px;
+    padding-bottom: 0px;
+}
+.archief div p:last-of-type{
+    text-align: right;
+    color: lightsteelblue;
+}
+
 p {
     text-decoration: none;
     list-style: none;
@@ -222,17 +290,21 @@ p {
     font-family: 'Arial';
     font-size: 12px;
 }
+.p1:hover, .p2:hover, .p3:hover{
+    background-color: lightslategrey;
+}
+
 .p1 {
     grid-area: p1;
-    background-color: #fe7f4a;
+    background-color: lightsteelblue;
 }
 .p2 {
     grid-area: p2;
-    background-color: #ff583d;
+    background-color: rgb(156, 196, 222);
 }
 .p3 {
     grid-area: p3;
-    background-color: blueviolet;
+    background-color: lightsteelblue;
 }
 
 .grid_footer {
@@ -341,35 +413,20 @@ p {
         grid-template-columns: 1fr 450px 450px 1fr;
         grid-template-row: 1fr 1fr 1fr ;
         grid-template-areas:
-        ". p1 p2 ."
+        ". n2 n3 ."
     }
-    .grid_naamplaat .p2{
+    .archief {
+    display: grid;
+    grid-template-columns: 1fr 450px 450px 1fr;
+    grid-template-row: 1fr 1fr 1fr ;
+    grid-template-areas:
+    ". n0 n1 ."
+    }
+    .nieuwsbewerkengrid{
         display: grid;
-        min-height: 300px;
-        grid-template-columns: 50% 50% ;
-        grid-template-row: 1fr 1fr ;
+        grid-template-columns: 1fr 900px 1fr;
+        grid-template-row: 1fr 1fr 1fr ;
         grid-template-areas:
-        " p11 p12 "
-        " p13 p14 "
+    ". nb0 ." 
     }
-    .p11, .p13{   
-        
-        
-        
-        text-align: right;
-        padding-right: 0px;
-    }
-    
-    .p11 p, .p13 p{
-        height: 20px;
-    }
-    .p12 input, .p14 input {
-        height: 20px;
-    }
-     
-    .p11 h3{
-        margin-top: 20px;
-    }
-    
-    
 }

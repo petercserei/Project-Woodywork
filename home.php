@@ -1,5 +1,22 @@
 <?php
+<<<<<<< HEAD
 SESSION_START();
+=======
+$pdo = new PDO("mysql:host=localhost;dbname=woodywork;port=3306", "root", ""); // conect database
+
+
+
+
+
+//inhoud van portofolio
+$port = $pdo->prepare("SELECT * FROM producten ORDER BY productenID DESC LIMIT 2");
+$port->execute();
+
+//inhoud van nieuws
+$nieuws = $pdo->prepare("SELECT * FROM nieuws ORDER BY nieuwsID DESC LIMIT 2");
+$nieuws->execute();
+
+>>>>>>> 0cce61a23dfdd23c124fb000d932474d68f711b6
 ?>
 
 <!DOCTYPE html>
@@ -57,18 +74,59 @@ SESSION_START();
                     <div class="bedrijf_text"><h1>Hoi!</h1><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p><br><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p></div>
                     <div class="bedrijf_img"></div></a>
                 </div>
-                <div class="h2"><a href="portfolio.php">
-                    <div class="product_text"><h1>Product 1</h1><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p><br><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p></div>
-                    <div class="product_img"></div></a>
-                </div>
-                <div class="h3"><a href="portfolio.php">
-                    <div class="product_text"><h1>Product 2</h1><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis nan mas penatibes, nascetur ridiculus mus.</p></div>
-                    <div class="product_img"></div>
+                
+                <div class="h2">
+                    <a href="archief.php">
+                        <div>
+                            <?php
+                            $row = $nieuws->fetch();
+                            print(
+                                          '<h3>'.$row[1].'</h3>'
+                                        . '<p>'.$row[2].'</p>'
+                                    . '<p>'.$row[3].'</p>'
+                                    );
+                            ?>
+                        </div>
+                        <div >
+                            <?php
+                            $row = $nieuws->fetch();
+                            print(
+                                          '<h3>'.$row[1].'</h3>'
+                                        . '<p>'.$row[2].'</p>'
+                                    . '<p>'.$row[3].'</p>'
+                                    );
+                            ?>
+                        </div>
                     </a>
                 </div>
-                <div class="h4"><a href="portfolio.php">
-                    <div class="product_text"><h1>Product 3</h1><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p><br><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p></div>
-                    <div class="product_img"></div></a>
+                    
+                <div class="h3">
+                    <?php
+                    $row = $port->fetch();
+                    print('<a href="product.php?id='.$row[0].'">'
+                            . '<div class="product_text">'
+                                . '<h2>'.$row[1].'</h2>'
+                                . '<p>'.$row[2].'</p>'
+                            . '</div>'
+                            . '<div class="product_img ">'
+                                . '<img src="data:image/jpg;base64,'.base64_encode($row[3] ).'">'
+                            . '</div>'
+                        . '</a>');
+                    ?>
+                </div>
+                <div class="h4">
+                    <?php
+                    $row = $port->fetch();
+                    print('<a href="product.php?id='.$row[0].'">'
+                            . '<div class="product_text">'
+                                . '<h2>'.$row[1].'</h2>'
+                                . '<p>'.$row[2].'</p>'
+                            . '</div>'
+                            . '<div class="product_img ">'
+                                . '<img src="data:image/jpg;base64,'.base64_encode($row[3] ).'">'
+                            . '</div>'
+                        . '</a>');
+                    ?>
                 </div>
             </div>
         </div>
