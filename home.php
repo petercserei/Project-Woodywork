@@ -9,7 +9,7 @@ $pdo = new PDO("mysql:host=localhost;dbname=woodywork;port=3306", "root", ""); /
 
 
 //inhoud van portofolio
-$port = $pdo->prepare("SELECT * FROM producten ORDER BY productenID DESC LIMIT 2");
+$port = $pdo->prepare("SELECT pr.productID, titel, beschrijving, plaatje FROM product pr LEFT JOIN plaatjes pl ON pr.productID = pl.productID AND pr.plaatjeID = PL.plaatjeID ORDER BY pr.productID DESC LIMIT 2");
 $port->execute();
 
 //inhoud van nieuws
@@ -103,13 +103,13 @@ $nieuws->execute();
                 <div class="h3">
                     <?php
                     $row = $port->fetch();
-                    print('<a href="product.php?id='.$row[0].'">'
+                    print('<a href="product.php?id='.$row["productID"].'">'
                             . '<div class="product_text">'
-                                . '<h2>'.$row[1].'</h2>'
-                                . '<p>'.$row[2].'</p>'
+                                . '<h2>'.$row["titel"].'</h2>'
+                                . '<p>'.$row["beschrijving"].'</p>'
                             . '</div>'
                             . '<div class="product_img ">'
-                                . '<img src="data:image/jpg;base64,'.base64_encode($row[3] ).'">'
+                                . '<img src="img/portofolio/'.$row["plaatje"].'">'
                             . '</div>'
                         . '</a>');
                     ?>
@@ -117,13 +117,13 @@ $nieuws->execute();
                 <div class="h4">
                     <?php
                     $row = $port->fetch();
-                    print('<a href="product.php?id='.$row[0].'">'
+                    print('<a href="product.php?id='.$row["productID"].'">'
                             . '<div class="product_text">'
-                                . '<h2>'.$row[1].'</h2>'
-                                . '<p>'.$row[2].'</p>'
+                                . '<h2>'.$row["titel"].'</h2>'
+                                . '<p>'.$row["beschrijving"].'</p>'
                             . '</div>'
                             . '<div class="product_img ">'
-                                . '<img src="data:image/jpg;base64,'.base64_encode($row[3] ).'">'
+                                . '<img src="img/portofolio/'.$row["plaatje"].'">'
                             . '</div>'
                         . '</a>');
                     ?>
