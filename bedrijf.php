@@ -1,3 +1,7 @@
+<?php
+
+SESSION_START();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,9 +13,30 @@
     <body>
         <div class="login_nav">
             <div class="center_nav">
-            <li><a href="inloggen.php"><p>inloggen</p></a></li>
-            <li><p>|</p></li>
-            <li><a href="winkelwagen.php"><p>winkelwagen (0)</p></a></li>
+                <?php
+                    if(isset($_SESSION['acc_id'])) {
+                    print '<div class="login_nav">
+                            <div class="center_nav">
+                                <form class=uitloggen-form action="includes/uitloggen-inc.php" method="POST">' ?>
+                                    <?php print "<a href=" . "#" . "><p>" . $_SESSION['acc_gebruikersnaam'] . "</p></a>"?>
+                                    <?php print '<a href="besteld.php" class="button_hide"><p>mijn bestellingen</p></a>'?>
+                                    <?php print '<button onclick="fUitloggen()" class="button_hide" id="button_p" type="submit" name="uitloggen">uitloggen</button>
+                                </form>
+                            <li><p>|</p></li>
+                            <li><a href="winkelwagen.php"><p>winkelwagen (0)</p></a></li>
+                            </div>
+                        </div>';
+                        
+                    } else {
+                        print '<div class="login_nav">
+                            <div class="center_nav">
+                                <li><a href="inloggen.php"><p>inloggen</p></a></li>
+                                <li><p>|</p></li>
+                                <li><a href="winkelwagen.php"><p>winkelwagen (0)</p></a></li>
+                            </div>
+                        </div>';
+                    }
+                ?>
             </div>
         </div>
         <div class="picture_header">

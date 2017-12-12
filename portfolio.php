@@ -1,15 +1,17 @@
 <?php
+
+SESSION_START();
 $pdo = new PDO("mysql:host=localhost;dbname=woodywork;port=3306", "root", ""); // conect database
 
 
-$countsql = $pdo->prepare("SELECT COUNT(productenID) as c FROM producten"); //count amount of items in portofolio
+$countsql = $pdo->prepare("SELECT COUNT(productID) as c FROM product"); //count amount of items in portofolio
 $countsql->execute();
 $countrow = $countsql->fetch();
 $count = $countrow["c"]; 
 
 
 //inhoud van portofolio
-$stmt = $pdo->prepare("SELECT * FROM producten ORDER BY productenID DESC");
+$stmt = $pdo->prepare("SELECT pr.productID, titel, plaatje FROM product pr LEFT JOIN plaatjes pl ON pr.productID = pl.productID AND pr.plaatjeID = PL.plaatjeID ORDER BY pr.productID DESC");
 $stmt->execute();
 
 ?>
@@ -24,9 +26,30 @@ $stmt->execute();
     <body>
         <div class="login_nav">
             <div class="center_nav">
-            <li><a href="inloggen.php"><p>inloggen</p></a></li>
-            <li><p>|</p></li>
-            <li><a href="winkelwagen.php"><p>winkelwagen (0)</p></a></li>
+                <?php
+                    if(isset($_SESSION['acc_id'])) {
+                    print '<div class="login_nav">
+                            <div class="center_nav">
+                                <form class=uitloggen-form action="includes/uitloggen-inc.php" method="POST">' ?>
+                                    <?php print "<a href=" . "#" . "><p>" . $_SESSION['acc_gebruikersnaam'] . "</p></a>"?>
+                                    <?php print '<a href="besteld.php" class="button_hide"><p>mijn bestellingen</p></a>'?>
+                                    <?php print '<button onclick="fUitloggen()" class="button_hide" id="button_p" type="submit" name="uitloggen">uitloggen</button>
+                                </form>
+                            <li><p>|</p></li>
+                            <li><a href="winkelwagen.php"><p>winkelwagen (0)</p></a></li>
+                            </div>
+                        </div>';
+                        
+                    } else {
+                        print '<div class="login_nav">
+                            <div class="center_nav">
+                                <li><a href="inloggen.php"><p>inloggen</p></a></li>
+                                <li><p>|</p></li>
+                                <li><a href="winkelwagen.php"><p>winkelwagen (0)</p></a></li>
+                            </div>
+                        </div>';
+                    }
+                ?>
             </div>
         </div>
         <div class="picture_header">
@@ -48,12 +71,22 @@ $stmt->execute();
             //voeg voor elke vijf een container div eromheen toe
             
             
+            $x=0;
+            if(isset($_SESSION['acc_id'])){ // check if admin
+                ?>
             
+            <div class="grid_portfolio">'
+                <div class="p1">
+                    <a href="product.php?id=nieuw">nieuw</a>
+                </div>
+                        <?php
+                $count++;
+                $x=1;
+            }
             
             //aantal producten uit de database:
             
-            
-            for($i = 0; $i<$count;$i++){
+            for($i = $x; $i<$count;$i++){
                 
                 if($i%3==0){
                     print('<div class="grid_portfolio">'); //container div voor elke drie divjes
@@ -64,10 +97,12 @@ $stmt->execute();
                 //haal hier spul uit de database
                 $row = $stmt->fetch();
                 //print de inhoud van het divje
-                print('<div class="p'.($i%3+1).'"><a href="product.php?id='.$row[0].'">'
-                        . '<h2>'.$row[1].'</h2>'
-                        . '<img src="data:image/jpg;base64,'.base64_encode($row[3] ).'">'
-                        . '</a></div>');
+                ?>
+                    <div class="p<?php print($i%3+1); ?>"><a href="product.php?id=<?php print($row["productID"]); ?>">
+                        <h2><?php print($row["titel"]); ?></h2>
+                        <img src="img/portofolio/<?php print($row["plaatje"]) ?>">
+                            </a></div>
+                <?php
                 
                 
                 if($i%3==2||$i==$count-1){ // sluit container div af na vijf divjes of na de laatste div

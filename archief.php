@@ -1,4 +1,6 @@
 <?php
+
+SESSION_START();
 $pdo = new PDO("mysql:host=localhost;dbname=woodywork;port=3306", "root", ""); // conect database
 
 $countsql = $pdo->prepare("SELECT COUNT(nieuwsID) as c FROM nieuws"); //count amount of items in portofolio
@@ -23,9 +25,30 @@ $nieuws->execute();
     <body>
         <div class="login_nav">
             <div class="center_nav">
-            <li><a href="inloggen.php"><p>inloggen</p></a></li>
-            <li><p>|</p></li>
-            <li><a href="winkelwagen.php"><p>winkelwagen (0)</p></a></li>
+                <?php
+                    if(isset($_SESSION['acc_id'])) {
+                    print '<div class="login_nav">
+                            <div class="center_nav">
+                                <form class=uitloggen-form action="includes/uitloggen-inc.php" method="POST">' ?>
+                                    <?php print "<a href=" . "#" . "><p>" . $_SESSION['acc_gebruikersnaam'] . "</p></a>"?>
+                                    <?php print '<a href="besteld.php" class="button_hide"><p>mijn bestellingen</p></a>'?>
+                                    <?php print '<button onclick="fUitloggen()" class="button_hide" id="button_p" type="submit" name="uitloggen">uitloggen</button>
+                                </form>
+                            <li><p>|</p></li>
+                            <li><a href="winkelwagen.php"><p>winkelwagen (0)</p></a></li>
+                            </div>
+                        </div>';
+                        
+                    } else {
+                        print '<div class="login_nav">
+                            <div class="center_nav">
+                                <li><a href="inloggen.php"><p>inloggen</p></a></li>
+                                <li><p>|</p></li>
+                                <li><a href="winkelwagen.php"><p>winkelwagen (0)</p></a></li>
+                            </div>
+                        </div>';
+                    }
+                ?>
             </div>
         </div>
         <div class="picture_header">
@@ -43,7 +66,7 @@ $nieuws->execute();
         <div class="container">
             <?php
             $x=0;
-            if(TRUE){ // check if admin
+            if(isset($_SESSION['acc_id'])){ // check if admin
                 print('<div class="archief">'
                     . '<div class="n0">'
                     .  '<a href="nieuwsbewerken.php?id=nieuw">'  
@@ -69,7 +92,7 @@ $nieuws->execute();
                                 . '<h3>'.$row[1].'</h3>'
                                 . '<p>'.$row[2].'</p>'
                                 . '<p>'.$row[3].'</p>');
-                if(TRUE){//check if admin
+                if(isset($_SESSION['acc_id'])){//check if admin
                     print(
                              '<a href="nieuwsbewerken.php?id='.$row[0].'">'  
                             . 'bewerken'  
