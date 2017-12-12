@@ -2,6 +2,84 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+}
+.contacttext h3 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.contacttext textarea {
+    resize: none;
+}
+.formulieren .error {
+    color: red;
+}
+.contacttext {
+    border-top: 30px solid;
+    border-bottom: 80px solid;
+    border-color: #8396A8;
+    padding: 0;
+    border-left: 150px solid;
+    color: #8396A8;
+    font-size: 12px;
+    font-family: 'Arial';
+    background-color: #8396A8;
+    display:grid;
+    grid-template-columns: 35% 30% 30%;
+
+}
+.formulieren input {
+    width: 180px;
+}
+.formulieren input, textarea {
+    margin-top: 12px;
+}
+.formulieren label{
+    text-align: right;
+    padding-right: 12px;
+    margin-top: 12px;
+    float: left;
+    width: 150px;
+    clear: left;
+
+}
+.formulieren .theSubmit {
+    margin-left: 150px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.adresgegevens {
+    margin-top: 12px;
+    color: #FFF;
+}
+.adresgegevens, li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #FFF;
+
+}
+#adrescontact {
+    list-style-type: none;
+    margin-left: 210px;
+    margin-top: 30px;
+    text-align: left;
+}
+.formulieren {
+    /*text-align: center;*/
+    font-family: 'Arial';
+    font-size: 12px;
+    color: #FFF;
+}
+.boxes {
+    margin-top: 50px;
+}
+
+#map {
+    border: 1px solid black;
+    height: 300px;
+    width: 100%;
 }
 
 html {
@@ -31,8 +109,8 @@ td:first-child, th:first-child{
 }
 
 img{
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: auto;
 }
 
 .login_nav {
@@ -145,7 +223,7 @@ nav ul a:hover {
 
 
 .container {
-        
+    background: #8396A8;
 }
 .grid_home a {
     text-decoration: none;
@@ -217,21 +295,26 @@ nav ul a:hover {
 }
 
 .bedrijf_text {
-    flex: 1;    
+    flex: 1;
     padding: 50px;
     min-height: 409px;
 }
 .bedrijf_img {
-    flex: 1;    
+    flex: 1;
     background: url(img/image001.jpg) center;
 }
 .product_text {
-    flex: 1;    
+    flex: 1;
     padding: 50px;
     min-height: 409px;
 }
 .product_img {
-    flex: 1;    
+
+    flex: 1;
+    background: url(img/all_things_wood.jpg) center;
+
+    flex: 1;
+
 }
 .product_img img{
     height:100%;
@@ -329,8 +412,8 @@ p {
     grid-template-rows: 1fr 1fr;
     justify-content: center;
     grid-template-areas:
-    ". i1 ."
-    ". i2 ."    
+        ". i1 ."
+        ". i2 ."
 }
 
 .inloggen-form {
@@ -360,7 +443,7 @@ p {
     grid-template-rows: 1fr 1fr;
     justify-content: center;
     grid-template-areas:
-    ". i1 ."
+        ". i1 ."
 }
 
 .registreren-form {
@@ -380,22 +463,22 @@ p {
 
 @media screen and (min-width: 1000px) {
     .picture_header {
-        background: url(img/15578438_258663144551980_443141190466654411_n.jpg) center; 
+        background: url(img/15578438_258663144551980_443141190466654411_n.jpg) center;
         height: 300px;
-    }   
-    
+    }
+
     nav ul {
         display: flex;
         width: 990px;
     }
-    
+
     .grid_home {
         display: grid;
         grid-template-columns: 1fr 495px 495px 1fr;
-        grid-template-row: 1fr 1fr; 
+        grid-template-row: 1fr 1fr;
         grid-template-areas:
-        ". h1 h2 ."
-        ". h3 h4 ."
+            ". h1 h2 ."
+            ". h3 h4 ."
     }
 
     .grid_portfolio {
@@ -404,29 +487,64 @@ p {
         grid-template-columns: 1fr 300px 300px 300px 1fr;
         grid-template-row: 1fr 1fr 1fr ;
         grid-template-areas:
-        ". p1 p2 p3 ."
+            ". p1 p2 p3 ."
     }
-    
-    .grid_naamplaat {
+
+    .grid_bedrijf {
         display: grid;
-        min-height: 300px;
-        grid-template-columns: 1fr 450px 450px 1fr;
-        grid-template-row: 1fr 1fr 1fr ;
-        grid-template-areas:
-        ". n2 n3 ."
+        grid-template-columns:1fr  2fr 1fr;
+        grid-auto-rows: minmax(100px, auto);
+        justify-items: stretch;
+        align-items: strecht;
+        grid-gap:1em;
+        padding: 5em;
+
+
     }
-    .archief {
+    .b1, .b2, .b3, .b4 {
+        background: #708090;
+    }
+    .b1 {
+        grid-column:1;
+        grid-row:1/4;
+    }
+    .b2 {
+        grid-column:2/4;
+        grid-row:1/4
+    }
+
+    .b3 {
+        grid-column:1/3;
+        grid-row:4/7;
+    }
+    .b4 {
+        grid-column:3;
+        grid-row:4/7;
+    }
+}
+
+
+.grid_naamplaat {
+    display: grid;
+    min-height: 300px;
+    grid-template-columns: 1fr 450px 450px 1fr;
+    grid-template-row: 1fr 1fr 1fr ;
+    grid-template-areas:
+        ". n2 n3 ."
+}
+.archief {
     display: grid;
     grid-template-columns: 1fr 450px 450px 1fr;
     grid-template-row: 1fr 1fr 1fr ;
     grid-template-areas:
-    ". n0 n1 ."
-    }
-    .nieuwsbewerkengrid{
-        display: grid;
-        grid-template-columns: 1fr 900px 1fr;
-        grid-template-row: 1fr 1fr 1fr ;
-        grid-template-areas:
-    ". nb0 ." 
-    }
+        ". n0 n1 ."
 }
+.nieuwsbewerkengrid{
+    display: grid;
+    grid-template-columns: 1fr 900px 1fr;
+    grid-template-row: 1fr 1fr 1fr ;
+    grid-template-areas:
+        ". nb0 ."
+}
+
+

@@ -17,5 +17,12 @@
             <file>file:/Applications/XAMPP/htdocs/aTest/includes/database-inlogsysteem-inc.php</file>
             <file>file:/Applications/XAMPP/htdocs/aTest/scripts/uitloggen-inc.js</file>
         </group>
+        <group>
+            <file>file:/C:/xampp/htdocs/aTest/bedrijf.php</file>
+            <file>file:/C:/xampp/htdocs/aTest/Contactverwerken.php</file>
+            <file>file:/C:/xampp/htdocs/aTest/contact.php</file>
+            <file>file:/C:/xampp/htdocs/aTest/stylesheet.css</file>
+            <file>file:/C:/xampp/htdocs/aTest/home.php</file>
+        </group>
     </open-files>
 </project-private>

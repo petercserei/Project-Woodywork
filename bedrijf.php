@@ -13,6 +13,7 @@ SESSION_START();
     <body>
         <div class="login_nav">
             <div class="center_nav">
+<<<<<<< HEAD
                 <?php
                     if(isset($_SESSION['acc_id'])) {
                     print '<div class="login_nav">
@@ -37,10 +38,15 @@ SESSION_START();
                         </div>';
                     }
                 ?>
+=======
+                <li><a href="inloggen.php"><p>inloggen</p></a></li>
+                <li><p>|</p></li>
+                <li><a href="winkelwagen.php"><p>winkelwagen (0)</p></a></li>
+>>>>>>> 4d6f9ce9c409bfbf31b2efff7ac6cfc88bf66bc9
             </div>
         </div>
         <div class="picture_header">
-            
+
         </div>
         <nav class="shadow">
             <ul>
@@ -53,14 +59,18 @@ SESSION_START();
         </nav>
         <div class="container">
             <div class="grid_bedrijf">
-                
-                
+                <div class="b1">Box 1</div>
+                <div class="b2">Box 2</div>
+                <div class="b3">Box 3</div>
+                <div class="b4">Box 4</div>
+
+
             </div>
         </div>
         <footer>
             <div class="grid_footer">
                 <div class="f1">
-<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p></div>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p></div>
             </div>
         </footer>
     </body>
