@@ -143,6 +143,19 @@ nav ul a:hover {
     background-color: #77642b;
 }
 
+nav ul li ul {
+    display: none;
+}
+
+nav ul li:hover ul {
+    display: flex;
+    flex-direction: column;
+    width: 215.03px;
+    position: absolute;
+    background-color: #708090;
+    z-index: 1;
+}
+
 
 .container {
         
@@ -357,7 +370,7 @@ p {
 .grid_registreren {
     display: grid;
     grid-template-columns: 1fr 990px 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr;
     justify-content: center;
     grid-template-areas:
     ". i1 ."
@@ -370,15 +383,43 @@ p {
     padding: 50px 200px 50px 200px;
 }
 
+.container-item {
+    display: flex;
+}
+
 .reg-item {
     height: 50px;
     font-size: 18px;
     padding: 10px;
     margin:10px;
+    flex: 15;
+}
+
+.checkmark.icon {
+    display: none;
+}
+.cross.icon {
+    display: none;
+}
+.icon {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+    transition: color 0.5s;
+}
+
+.checkmark.active {
+    color: green;
+    display: block;
+}
+
+.cross.active {
+    color: red;
+    display: block
 }
 
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 500px) {
     .picture_header {
         background: url(img/15578438_258663144551980_443141190466654411_n.jpg) center; 
         height: 300px;
@@ -527,42 +568,80 @@ p {
         align-items: strecht;
         grid-gap:3em;
         padding: 5em;
-    }
-    .grid_bedrijf h2 {
-        display: inline-block;
-        text-align: center;
-        margin: 0;
-    }
-    .grid_bedrijf p {
-        display: inline-block;
-        margin-top: 15px;
-        padding: 10px;
-        text-align: center;
-    }
-    .fotob1 {
-        display: inline-block;
-        width: 100%;
-        height: auto;
-    }
-    .b1, .b2, .b3, .b4 {
-        background: #708090;
-    }
+}
+.grid_bedrijf h2 {
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+}
+.grid_bedrijf p {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px;
+    text-align: center;
+}
+.fotob1 {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+}
+.b1, .b2, .b3, .b4 {
+    background: #708090;
+}
 
-    .b1 {
-        grid-column:1;
-        grid-row:1/2;
-    }
-    .b2 {
-        grid-column:2/5;
-        grid-row:1/2
-    }
+.b1 {
+    grid-column:1;
+    grid-row:1/2;
+}
+.b2 {
+    grid-column:2/5;
+    grid-row:1/2
+}
 
-    .b3 {
-        grid-column:1/3;
-        grid-row:2/4;
-    }
-    .b4 {
-        grid-column:3;
-        grid-row:2/4;
-    }
+.b3 {
+    grid-column:1/3;
+    grid-row:2/4;
+}
+.b4 {
+    grid-column:3;
+    grid-row:2/4;
+}
+
+.error2 {
+    display: none;
+}
+
+.error2.active {
+    display: block;
+    color: red;
+    margin: 0px 10px 0px 10px;
+    font-family: 'Arial';
+    font-size: 11px;
+    text-align: right;
+}
+
+.error3 {
+    display: none;
+}
+
+.error3.active {
+    display: block;
+    color: red;
+    margin: 0px 10px 0px 10px;
+    font-family: 'Arial';
+    font-size: 11px;
+    text-align: right;
+}
+
+.error4 {
+    display: none;
+}
+
+.error4.active {
+    display: block;
+    color: red;
+    margin: 0px 10px 0px 10px;
+    font-family: 'Arial';
+    font-size: 11px;
+    text-align: right;
 }

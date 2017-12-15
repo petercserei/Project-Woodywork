@@ -29,7 +29,8 @@ if(isset($_POST['registreren'])) {
                 exit();
             } else {
                 //check of wachtwoord overeen komt met wachtwoord2
-                if($wachtwoord != $wachtwoord2) {
+                if($wachtwoord != $wachtwoord2) {            $sql = "SELECT * FROM gebruiker WHERE gebruikersnaam = '$gebruikersnaam'";
+
                     header("Location: ../registreren.php?registreren=wachtwoord-fout");
                     exit();
                 } else {
