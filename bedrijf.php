@@ -53,10 +53,11 @@ SESSION_START();
         </nav>
         <div class="container">
             <div class="grid_bedrijf">
-                <div class="b1">Box 1</div>
-                <div class="b2">Box 2</div>
-                <div class="b3">Box 3</div>
-                <div class="b4">Box 4</div>
+                <div class="b1">
+                    <img class="fotob1" src="https://alexiakliniek.nl/wp-content/uploads/2013/12/persoon-zonder-foto1.png" alt="Profielfoto"></div>
+                <div class="b2"><h2>Over WoodyWork</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p></div>
+                <div class="b3"><h2>Huidig Project</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p></div>
+                <div class="b4"><a href="portfolio.php"><img class="fotob1" src="https://alexiakliniek.nl/wp-content/uploads/2013/12/persoon-zonder-foto1.png" alt="Profielfoto"></a></div>
 
 
             </div>
