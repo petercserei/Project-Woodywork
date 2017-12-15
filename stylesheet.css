@@ -432,7 +432,7 @@ p {
     
     .grid_home {
         display: grid;
-        grid-template-columns: 1fr 495px 495px 1fr;
+        grid-template-columns: 14% 36% 36% 14%;
         grid-template-row: 1fr 1fr; 
         grid-template-areas:
         ". h1 h2 ."
@@ -442,7 +442,7 @@ p {
     .grid_portfolio {
         display: grid;
         min-height: 300px;
-        grid-template-columns: 1fr 300px 300px 300px 1fr;
+        grid-template-columns: 14% 24% 24% 24% 14%;
         grid-template-row: 1fr 1fr 1fr ;
         grid-template-areas:
         ". p1 p2 p3 ."
@@ -451,21 +451,21 @@ p {
     .grid_naamplaat {
         display: grid;
         min-height: 300px;
-        grid-template-columns: 1fr 450px 450px 1fr;
+        grid-template-columns: 14% 36% 36% 14%;
         grid-template-row: 1fr 1fr 1fr ;
         grid-template-areas:
         ". n2 n3 ."
     }
     .archief {
     display: grid;
-    grid-template-columns: 1fr 450px 450px 1fr;
+    grid-template-columns: 14% 36% 36% 14%;
     grid-template-row: 1fr 1fr 1fr ;
     grid-template-areas:
     ". n0 n1 ."
     }
     .nieuwsbewerkengrid{
         display: grid;
-        grid-template-columns: 1fr 900px 1fr;
+        grid-template-columns: 14% 72% 14%;
         grid-template-row: 1fr 1fr 1fr ;
         grid-template-areas:
     ". nb0 ." 
