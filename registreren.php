@@ -59,12 +59,15 @@ SESSION_START();
                     <div class="container-item"><input onblur="onValidateEmail()" id="email" class="reg-item" type="email" name="email" placeholder="Email">
                         <i id="checkmark-email" class="checkmark icon fa fa-check fa-2x" aria-hidden="true"></i>
                         <i id="cross-email" class="cross icon fa fa-times fa-2x" aria-hidden="true"></i></div>
+                        <div id="error_text_beschikbaar" class="error2">email is niet beschikbaar</div>
+                        <div id="error_text_leeg" class="error2">email is niet geldig</div>
                     <div class="container-item"><input onblur="onValidateGebruikersnaam()" id="gebruikersnaam" class="reg-item" type="text" name="gebruikersnaam" placeholder="Gebruikersnaam">
                         <i id="checkmark-gebruikersnaam" class="checkmark icon fa fa-check fa-2x" aria-hidden="true"></i>
                         <i id="cross-gebruikersnaam" class="cross icon fa fa-times fa-2x" aria-hidden="true"></i></div>
-                        <div id="error_text_beschikbaar" class="error2">gebruikersnaam is niet beschikbaar</div>
-                        <div id="error_text_alfanr" class="error3">gebruikersnaam mag alleen bestaan uit alfanumerieke tekens</div>
+                        <div id="error_text_beschikbaar2" class="error2">gebruikersnaam is niet beschikbaar</div>
+                        <div id="error_text_alfanr" class="error3">gebruikersnaam mag niet beginnen met een niet-alfanumerieke teken</div>
                         <div id="error_text_length" class="error3">gebruikersnaam moet minimaal 3 karakters bevatten</div>
+                        <div id="error_text_maxlength" class="error3">gebruikersnaam mag maximaal 10 karakters bevatten</div>
                     <div class="container-item"><input onblur="onValidateWachtwoord()" id="wachtwoord" class="reg-item" type="password" name="wachtwoord" placeholder="Wachtwoord">
                         <i id="checkmark-wachtwoord" class="checkmark icon fa fa-check fa-2x" aria-hidden="true"></i>
                         <i id="cross-wachtwoord" class="cross icon fa fa-times fa-2x" aria-hidden="true"></i></div>

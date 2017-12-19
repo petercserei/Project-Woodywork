@@ -5,18 +5,22 @@
         <group>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/includes/database-inlogsysteem-inc.php</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/includes/vergelijk-gebruikersnaam-inc.php</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/bedrijf.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/contact.php</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/includes/registreren-inc.php</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/stylesheet.css</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/includes/uitloggen-inc.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/includes/vergelijk-email-inc.php</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/scripts/checkmarks-inc.js</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/registreren.php</file>
         </group>
         <group>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/includes/database-inlogsysteem-inc.php</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/includes/vergelijk-gebruikersnaam-inc.php</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/home.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/contact.php</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/includes/registreren-inc.php</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/stylesheet.css</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/includes/uitloggen-inc.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/includes/vergelijk-email-inc.php</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/scripts/checkmarks-inc.js</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/registreren.php</file>
         </group>
