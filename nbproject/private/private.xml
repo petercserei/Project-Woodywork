@@ -3,7 +3,6 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< Updated upstream
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/includes/database-inlogsysteem-inc.php</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/includes/vergelijk-gebruikersnaam-inc.php</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/contact.php</file>
@@ -24,32 +23,6 @@
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/includes/vergelijk-email-inc.php</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/scripts/checkmarks-inc.js</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/aTest/registreren.php</file>
-=======
-            <file>file:/C:/xampp/htdocs/aTest/bedrijf.php</file>
-            <file>file:/C:/xampp/htdocs/aTest/naamplaat.php</file>
-            <file>file:/C:/xampp/htdocs/aTest/besteld.php</file>
-            <file>file:/C:/xampp/htdocs/aTest/registreren.php</file>
-            <file>file:/C:/xampp/htdocs/aTest/Contactverwerken.php</file>
-            <file>file:/C:/xampp/htdocs/aTest/archief.php</file>
-            <file>file:/C:/xampp/htdocs/aTest/contact.php</file>
-            <file>file:/C:/xampp/htdocs/aTest/nieuwsbewerken.php</file>
-            <file>file:/C:/xampp/htdocs/aTest/stylesheet.css</file>
-            <file>file:/C:/xampp/htdocs/aTest/home.php</file>
-            <file>file:/C:/xampp/htdocs/aTest/inloggen.php</file>
-        </group>
-        <group>
-            <file>file:/C:/xampp/htdocs/aTest/bedrijf.php</file>
-            <file>file:/C:/xampp/htdocs/aTest/naamplaat.php</file>
-            <file>file:/C:/xampp/htdocs/aTest/besteld.php</file>
-            <file>file:/C:/xampp/htdocs/aTest/registreren.php</file>
-            <file>file:/C:/xampp/htdocs/aTest/Contactverwerken.php</file>
-            <file>file:/C:/xampp/htdocs/aTest/archief.php</file>
-            <file>file:/C:/xampp/htdocs/aTest/contact.php</file>
-            <file>file:/C:/xampp/htdocs/aTest/nieuwsbewerken.php</file>
-            <file>file:/C:/xampp/htdocs/aTest/stylesheet.css</file>
-            <file>file:/C:/xampp/htdocs/aTest/home.php</file>
-            <file>file:/C:/xampp/htdocs/aTest/inloggen.php</file>
->>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>
