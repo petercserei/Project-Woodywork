@@ -2,6 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+
+}
+
+#map {
+    border: 1px solid black;
+    height: 300px;
+    width: 100%;
+
 }
 
 html {
@@ -31,8 +40,8 @@ td:first-child, th:first-child{
 }
 
 img{
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: auto;
 }
 
 .login_nav {
@@ -158,7 +167,7 @@ nav ul li:hover ul {
 
 
 .container {
-        
+
 }
 .grid_home a {
     text-decoration: none;
@@ -230,21 +239,21 @@ nav ul li:hover ul {
 }
 
 .bedrijf_text {
-    flex: 1;    
+    flex: 1;
     padding: 50px;
     min-height: 409px;
 }
 .bedrijf_img {
-    flex: 1;    
+    flex: 1;
     background: url(img/image001.jpg) center;
 }
 .product_text {
-    flex: 1;    
+    flex: 1;
     padding: 50px;
     min-height: 409px;
 }
 .product_img {
-    flex: 1;    
+    flex: 1;
 }
 .product_img img{
     height:100%;
@@ -342,8 +351,8 @@ p {
     grid-template-rows: 1fr 1fr;
     justify-content: center;
     grid-template-areas:
-    ". i1 ."
-    ". i2 ."    
+        ". i1 ."
+        ". i2 ."
 }
 
 .inloggen-form {
@@ -373,7 +382,7 @@ p {
     grid-template-rows: 1fr;
     justify-content: center;
     grid-template-areas:
-    ". i1 ."
+        ". i1 ."
 }
 
 .registreren-form {
@@ -408,6 +417,7 @@ p {
     transition: color 0.5s;
 }
 
+
 .checkmark.active {
     color: green;
     display: block;
@@ -418,25 +428,26 @@ p {
     display: block
 }
 
+@media screen and (min-width: 1000px) {
 
-@media screen and (min-width: 500px) {
     .picture_header {
-        background: url(img/15578438_258663144551980_443141190466654411_n.jpg) center; 
+        background: url(img/15578438_258663144551980_443141190466654411_n.jpg) center;
         height: 300px;
-    }   
-    
+    }
+
     nav ul {
         display: flex;
         width: 990px;
+
     }
-    
+
     .grid_home {
         display: grid;
         grid-template-columns: 14% 36% 36% 14%;
-        grid-template-row: 1fr 1fr; 
+        grid-template-row: 1fr 1fr;
         grid-template-areas:
-        ". h1 h2 ."
-        ". h3 h4 ."
+            ". h1 h2 ."
+            ". h3 h4 ."
     }
 
     .grid_portfolio {
@@ -445,30 +456,30 @@ p {
         grid-template-columns: 14% 24% 24% 24% 14%;
         grid-template-row: 1fr 1fr 1fr ;
         grid-template-areas:
-        ". p1 p2 p3 ."
+            ". p1 p2 p3 ."
     }
-    
+
     .grid_naamplaat {
         display: grid;
         min-height: 300px;
         grid-template-columns: 14% 36% 36% 14%;
         grid-template-row: 1fr 1fr 1fr ;
         grid-template-areas:
-        ". n2 n3 ."
+            ". n2 n3 ."
     }
     .archief {
-    display: grid;
-    grid-template-columns: 14% 36% 36% 14%;
-    grid-template-row: 1fr 1fr 1fr ;
-    grid-template-areas:
-    ". n0 n1 ."
+        display: grid;
+        grid-template-columns: 14% 36% 36% 14%;
+        grid-template-row: 1fr 1fr 1fr ;
+        grid-template-areas:
+            ". n0 n1 ."
     }
     .nieuwsbewerkengrid{
         display: grid;
         grid-template-columns: 14% 72% 14%;
         grid-template-row: 1fr 1fr 1fr ;
         grid-template-areas:
-    ". nb0 ." 
+            ". nb0 ."
     }
 }
 
@@ -544,6 +555,7 @@ p {
     margin-top: 50px;
 }
 
+
 #map {
     border: 1px solid black;
     height: 300px;
@@ -557,8 +569,11 @@ p {
 .bedrijf_img {
     flex: 1;
     background: url(img/image001.jpg) center;
-}  
- .grid_bedrijf {
+}
+.grid_bedrijf {
+
+    .grid_bedrijf {
+
         font-size: 12px;
         font-family: 'Arial';
         display: grid;
@@ -568,43 +583,84 @@ p {
         align-items: strecht;
         grid-gap:3em;
         padding: 5em;
-}
-.grid_bedrijf h2 {
-    display: inline-block;
-    text-align: center;
-    margin: 0;
-}
-.grid_bedrijf p {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px;
-    text-align: center;
-}
-.fotob1 {
-    display: inline-block;
-    width: 100%;
-    height: auto;
-}
-.b1, .b2, .b3, .b4 {
-    background: #708090;
-}
 
-.b1 {
-    grid-column:1;
-    grid-row:1/2;
-}
-.b2 {
-    grid-column:2/5;
-    grid-row:1/2
-}
+    }
+    .grid_bedrijf h2 {
+        display: inline-block;
+        text-align: center;
+        margin: 0;
+    }
+    .grid_bedrijf p {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px;
+        text-align: center;
+    }
+    .fotob1 {
+        display: inline-block;
+        width: 100%;
+        height: auto;
+    }
+    .b1, .b2, .b3, .b4 {
+        background: #708090;
+    }
 
-.b3 {
-    grid-column:1/3;
-    grid-row:2/4;
-}
-.b4 {
-    grid-column:3;
-    grid-row:2/4;
+    .b1 {
+        grid-column:1;
+        grid-row:1/2;
+    }
+    .b2 {
+        grid-column:2/5;
+        grid-row:1/2
+    }
+
+    .b3 {
+        grid-column:1/3;
+        grid-row:2/4;
+    }
+    .b4 {
+        grid-column:3;
+        grid-row:2/4;
+
+    }
+    .grid_bedrijf h2 {
+        display: inline-block;
+        text-align: center;
+        margin: 0;
+    }
+    .grid_bedrijf p {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px;
+        text-align: center;
+    }
+    .fotob1 {
+        display: inline-block;
+        width: 100%;
+        height: auto;
+    }
+    .b1, .b2, .b3, .b4 {
+        background: #708090;
+    }
+
+    .b1 {
+        grid-column:1;
+        grid-row:1/2;
+    }
+    .b2 {
+        grid-column:2/5;
+        grid-row:1/2
+    }
+
+    .b3 {
+        grid-column:1/3;
+        grid-row:2/4;
+    }
+    .b4 {
+        grid-column:3;
+        grid-row:2/4;
+    }
+
 }
 
 .error2 {
@@ -632,6 +688,57 @@ p {
     font-size: 11px;
     text-align: right;
 }
+.grid_contact {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 14% 72% 14%;
+    grid-template-areas:
+        ". c1 ."
+        ". c2 ."
+}
+.formulier {
+    grid-row: 1;
+    grid-area: c1;
+    margin: 0;
+    min-height: 400px;
+    min-width: 150px;
+}
+.simpleform ul, li{
+    list-style: none;
+}
+.simpleform input, textarea {
+    display:block;
+    margin: 0 auto;
+    resize: none;
+    width: 200px;
+}
+.thesubmit {
+    justify-content: center;
+    text-align: center;
+}
+.simpleform label {
+    display: block;
+
+}
+
+
+.grid_contact h3 {
+    margin: 0;
+    padding: 1em 0;
+    text-align: center;
+}
+.gegevens {
+    grid-row: 2;
+    grid-area: c2;
+    min-height: 200px;
+    min-width: 150px;
+}
+#map {
+    border: 1px solid black;
+    height: 300px;
+    width: 100%;
+}
+
 
 .error4 {
     display: none;
