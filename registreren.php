@@ -3,7 +3,7 @@ SESSION_START();
 ?>
 
 <!DOCTYPE html>
-<html> 
+<html>
     <head>
         <meta charset="UTF-8">
         <title>registreren_pagina</title>
@@ -65,9 +65,9 @@ SESSION_START();
                         <i id="checkmark-gebruikersnaam" class="checkmark icon fa fa-check fa-2x" aria-hidden="true"></i>
                         <i id="cross-gebruikersnaam" class="cross icon fa fa-times fa-2x" aria-hidden="true"></i></div>
                         <div id="error_text_beschikbaar2" class="error2">gebruikersnaam is niet beschikbaar</div>
-                        <div id="error_text_alfanr" class="error3">gebruikersnaam mag niet beginnen met een niet-alfanumerieke teken</div>
+                        <div id="error_text_alfanr" class="error3">gebruikersnaam mag geen niet-alfanumerieke tekens bevatten</div>
                         <div id="error_text_length" class="error3">gebruikersnaam moet minimaal 3 karakters bevatten</div>
-                        <div id="error_text_maxlength" class="error3">gebruikersnaam mag maximaal 10 karakters bevatten</div>
+                        <div id="error_text_maxlength" class="error3">gebruikersnaam mag maximaal 20 karakters bevatten</div>
                     <div class="container-item"><input onblur="onValidateWachtwoord()" id="wachtwoord" class="reg-item" type="password" name="wachtwoord" placeholder="Wachtwoord">
                         <i id="checkmark-wachtwoord" class="checkmark icon fa fa-check fa-2x" aria-hidden="true"></i>
                         <i id="cross-wachtwoord" class="cross icon fa fa-times fa-2x" aria-hidden="true"></i></div>

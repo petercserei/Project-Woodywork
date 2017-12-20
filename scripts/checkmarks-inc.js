@@ -1,3 +1,8 @@
+//booleans die true zijn als de items goedgekeurd zijn
+let validatedEmail = false;
+let validatedGebruikersnaam = false;
+let validatedWachtwoord = false;
+let validatedWachtwoord2 = false;
 
 function onValidateEmail() {
     //selecteer inhoud van email tekstveld
@@ -23,7 +28,7 @@ function onValidateEmail() {
                 document.querySelector("#cross-email").classList.add("active");
                 document.querySelector("#error_text_beschikbaar").classList.remove("active");
                 document.querySelector("#error_text_leeg").classList.add("active");
-            //check of email voorkomt in de database
+            //check of email in de database voorkomt
             } else if(!gelijk) {
                 document.querySelector("#cross-email").classList.add("active");
                 document.querySelector("#checkmark-email").classList.remove("active");
@@ -35,6 +40,7 @@ function onValidateEmail() {
                 document.querySelector("#checkmark-email").classList.add("active");
                 document.querySelector("#error_text_beschikbaar").classList.remove("active");
                 document.querySelector("#error_text_leeg").classList.remove("active");
+                validatedEmail = true;
             }
         }
     };
@@ -46,8 +52,8 @@ function onValidateGebruikersnaam() {
     //selecteer inhoud van gebruikersnaam tekstveld
     const gebruikersnaamElement = document.querySelector("#gebruikersnaam");
     const content = gebruikersnaamElement.value;
-    //maak regular expression variable om te kunnen checken op alfanumerieke tekens
-    const regex = /^\w/;
+    //maak regular expression variable om te kunnen checken op niet-alfanumerieke tekens
+    const regex = /\W/;
     const isValid = regex.exec(content);
     //vergelijk database met inhoud gebruikersnaam tekstveld door middel van httpRequest
     const http = new XMLHttpRequest();
@@ -64,7 +70,7 @@ function onValidateGebruikersnaam() {
                 document.querySelector("#error_text_length").classList.add("active");
                 document.querySelector("#error_text_maxlength").classList.remove("active");
             //check gebruikersnaam op lengte
-            } else if(content.length > 10) {
+            } else if(content.length > 20) {
                 document.querySelector("#checkmark-gebruikersnaam").classList.remove("active");
                 document.querySelector("#cross-gebruikersnaam").classList.add("active");
                 document.querySelector("#error_text_beschikbaar2").classList.remove("active");
@@ -72,14 +78,14 @@ function onValidateGebruikersnaam() {
                 document.querySelector("#error_text_length").classList.remove("active");
                 document.querySelector("#error_text_maxlength").classList.add("active");
             //check gebruikersnaam op alfanumerieke tekens
-            } else if(!isValid) {
+            } else if(isValid) {
                 document.querySelector("#checkmark-gebruikersnaam").classList.remove("active");
                 document.querySelector("#cross-gebruikersnaam").classList.add("active");
                 document.querySelector("#error_text_beschikbaar2").classList.remove("active");
                 document.querySelector("#error_text_alfanr").classList.add("active");
                 document.querySelector("#error_text_length").classList.remove("active");
                 document.querySelector("#error_text_maxlength").classList.remove("active");
-            //check of gebruikersnaam voorkomt in de database
+            //check of gebruikersnaam in de database voorkomt
             } else if(!gelijk) {
                 document.querySelector("#cross-gebruikersnaam").classList.add("active");
                 document.querySelector("#checkmark-gebruikersnaam").classList.remove("active");
@@ -95,6 +101,7 @@ function onValidateGebruikersnaam() {
                 document.querySelector("#error_text_alfanr").classList.remove("active");
                 document.querySelector("#error_text_length").classList.remove("active");
                 document.querySelector("#error_text_maxlength").classList.remove("active");
+                validatedGebruikersnaam = true;
             }
         }
     };
@@ -107,7 +114,7 @@ function onValidateWachtwoord() {
     const wachtwoordElement = document.querySelector("#wachtwoord");
     const content = wachtwoordElement.value;
     //maak regular expression variable om te kunnen checken op niet-alfanumerieke tekens
-    const regex = /\W+/;
+    const regex = /\W/;
     const isValid = regex.exec(content);
     //check wachtwoord op lengte
     if(content.length < 7) {
@@ -127,6 +134,7 @@ function onValidateWachtwoord() {
         document.querySelector("#cross-wachtwoord").classList.remove("active");
         document.querySelector("#error_text").classList.remove("active");
         document.querySelector("#error_text2").classList.remove("active");
+        validatedWachtwoord = true;
     }
 }
 
@@ -135,7 +143,7 @@ function onValidateWachtwoord2() {
     const wachtwoordElement = document.querySelector("#wachtwoord2");
     const content = wachtwoordElement.value;
     //maak regular expression variable om te kunnen checken op niet-alfanumerieke tekens
-    const regex = /\W+/;
+    const regex = /\W/;
     const isValid = regex.exec(content);
     //check wachtwoord2 op lengte
     if(content.length < 7) {
@@ -165,6 +173,7 @@ function onValidateWachtwoord2() {
         document.querySelector("#checkmark-wachtwoord2").classList.add("active");
         document.querySelector("#error_text3").classList.remove("active");
         document.querySelector("#error_text_equal2").classList.remove("active");
+        validatedWachtwoord2 = true;
     }
 }
 //maak functie om wachtwoord en wachtwoord2 te kunnen vergelijken
@@ -180,6 +189,9 @@ function isSame() {
 }
 
 function fRegistreren() {
-    
+    if(validatedEmail && validatedGebruikersnaam && validatedWachtwoord && validatedWachtwoord2) {
+        alert("account is aangemaakt");
+    } else {
+        alert("account kan niet worden aangemaakt");
+    }
 }
-

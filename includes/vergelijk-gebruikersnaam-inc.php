@@ -1,5 +1,5 @@
 <?php
-
+//include database connectie
 include_once 'database-inlogsysteem-inc.php';
 
 $gebruikersnaam = $_GET["gebruikersnaam"];
